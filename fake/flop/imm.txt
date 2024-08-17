@@ -1,0 +1,8 @@
+flopx: Discard one card from the deck. Flop x cards from the deck to the community. If the last flopped card is a Heart, flop one more card.
+<SEP>
+def flopx(self, x):
+    self.deck.pop()
+    for i in range(x):
+        self.community += [self.deck.pop()]
+    if self.community[-1][0] == 'H':
+        self.community += [self.deck.pop()]

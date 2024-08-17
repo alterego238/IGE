@@ -1,0 +1,9 @@
+flopx: Discard one card from the deck. Flop x cards from the deck to the community. If the first flopped card is red (Hearts or Diamonds), flop one more card.
+<SEP>
+def flopx(self, x):
+    self.deck.pop()
+    for i in range(x):
+        card = self.deck.pop()
+        self.community += [card]
+        if i == 0 and card[0] in ['H','D']:
+            self.community += [self.deck.pop()]

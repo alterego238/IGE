@@ -1,0 +1,21 @@
+Config:
+    Number of players: {n_players}
+    Min bet: {min_bet}
+    Max bet: {max_bet}
+    Suit: {suit}
+    Suit have rank: {suit_have_rank}
+    Card value rank: {value}
+    Card combinations rank: {card_combinations_rank}
+
+Phase:
+    start: Configure the game and prepare the deck and chips for all players.
+    shuffle: Shuffle the deck.
+    {blind}
+    {dealx}
+    switch: Query each player to discard a number of cards and draw the same number of new cards from the deck.
+    bet: Query each player to bet until all unfolded players have placed the highest bet or there is only one unfolded player.
+    {flopx}
+    show: Calculate the highest five-card hand of each player from hole cards and community cards.
+    prize: Determine the winners with the highest five-card hand and split the prize pool to them.
+
+Flow: {flow}

@@ -1,0 +1,8 @@
+dealx: Shuffle the order of players and then deal x cards to each player following this order.
+<SEP>
+def dealx(self, x):
+    players = list(self.players.keys())
+    for i in range(x):
+        shuffle(players)
+        for p in self.players:
+            self.players[p].hole += [self.deck.pop()]

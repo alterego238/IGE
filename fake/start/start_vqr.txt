@@ -1,0 +1,14 @@
+There are six suits: Hearts (H), Diamonds (D), Clubs (C), Spades (S), Flowers (F), Moons (M).
+Card values rank as: 2<3<4<5<6<7<8<9<10<11<12<13<R1<R2<R3<R4.
+There are four special cards: R1, R2, R3, R4, which are the highest-valued cards.
+<SEP>
+
+def creat_deck(suits,values):
+    deck=[]
+    for v in values:
+        for s in suits:
+            deck+=[''.join([s,v])]
+    deck+=['R1','R2','R3','R4']
+    return deck
+state={}
+state['deck']=creat_deck(['H','D','C','S','F','M'],['2','3','4','5','6','7','8','9','10','11','12','13'])

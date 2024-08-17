@@ -1,0 +1,21 @@
+Config:
+    Number of players: 3
+    Min bet: 10
+    Max bet: 1000
+    Suit: ['G', 'A', 'K', 'L', 'B', 'M']
+    Suit have rank: True
+    Card value rank: [7, 3, 2, 20, 18, 11, 6, 8, 4, 17, 12, 9, 5]
+    Card combinations rank: ['Straight', 'Straight Flush', 'Full House', 'Four of a Kind', 'Three of a Kind', 'Pair', 'High Card', 'Two Pair', 'Flush']
+
+Phase:
+    start: Configure the game and prepare the deck and chips for all players.
+    shuffle: Shuffle the deck.
+    blind: Randomly choose one player as small blind and two players as big blind respectively. Place 1/2 minimum bet for small blind and minimum bet for big blind.
+    dealx: Deal x cards to each player, then randomly discard 1 card from each player's hand to the bottom of the deck.
+    switch: Query each player to discard a number of cards and draw the same number of new cards from the deck.
+    bet: Query each player to bet until all unfolded players have placed the highest bet or there is only one unfolded player.
+    flopx: Discard one card from the deck. Flop x cards from the deck to the community. Except when x=1, if the first flopped card matches the suit of the last card, flop one more.
+    show: Calculate the highest five-card hand of each player from hole cards and community cards.
+    prize: Determine the winners with the highest five-card hand and split the prize pool to them.
+
+Flow: ['start', 'shuffle', 'deal3', 'bet', 'flop3', 'bet', 'flop1', 'bet', 'flop1', 'bet', 'show', 'prize']

@@ -1,0 +1,72 @@
+{"guidance": 53.0, "logic": 55.5, "relevance": 76.0, "coherence": 60.5, "conciseness": 72.0, "overall": 59.5}
+exec_success_rate:  0.0000
+correct_rate:  0.0000
+function_exec_success_rate:  1.0000
+function_correct_rate:  0.8833
+num_functions: 31
+combined_static_methods_dict:
+{
+  "config": {
+    "num_funcitons": 1,
+    "func_exec_success": 1,
+    "func_correct": 0,
+    "func_exec_success_ratio": 1.0,
+    "func_correct_ratio": 0.0
+  },
+  "start": {
+    "num_funcitons": 9,
+    "func_exec_success": 9,
+    "func_correct": 9,
+    "func_exec_success_ratio": 1.0,
+    "func_correct_ratio": 1.0
+  },
+  "shuffle": {
+    "num_funcitons": 0,
+    "func_exec_success": 0,
+    "func_correct": 0,
+    "func_exec_success_ratio": 0,
+    "func_correct_ratio": 0
+  },
+  "switch": {
+    "num_funcitons": 0,
+    "func_exec_success": 0,
+    "func_correct": 0,
+    "func_exec_success_ratio": 0,
+    "func_correct_ratio": 0
+  },
+  "dealx": {
+    "num_funcitons": 1,
+    "func_exec_success": 1,
+    "func_correct": 0,
+    "func_exec_success_ratio": 1.0,
+    "func_correct_ratio": 0.0
+  },
+  "flopx": {
+    "num_funcitons": 7,
+    "func_exec_success": 7,
+    "func_correct": 5,
+    "func_exec_success_ratio": 1.0,
+    "func_correct_ratio": 0.7142857142857143
+  },
+  "bet_done": {
+    "num_funcitons": 2,
+    "func_exec_success": 2,
+    "func_correct": 2,
+    "func_exec_success_ratio": 1.0,
+    "func_correct_ratio": 1.0
+  },
+  "blind": {
+    "num_funcitons": 0,
+    "func_exec_success": 0,
+    "func_correct": 0,
+    "func_exec_success_ratio": 0,
+    "func_correct_ratio": 0
+  },
+  "set_flow": {
+    "num_funcitons": 0,
+    "func_exec_success": 0,
+    "func_correct": 0,
+    "func_exec_success_ratio": 0,
+    "func_correct_ratio": 0
+  }
+}

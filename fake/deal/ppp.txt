@@ -1,0 +1,7 @@
+dealx: Deal x cards to each player. Revive 3 cards from the bottom to the top of the deck before dealing the next card.
+<SEP>
+def dealx(self, x):
+    for i in range(x):
+        for p in self.players:
+            self.players[p].hole += [self.deck.pop()]
+        self.deck = self.deck[3:] + self.deck[:3]

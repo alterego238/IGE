@@ -1,0 +1,10 @@
+dealx: Deal x+1 cards to each player, then each player randomly discards 1 card and shuffles it back into the deck.
+<SEP>
+def dealx(self, x):
+    for i in range(x + 1):
+        for p in self.players:
+            self.players[p].hole += [self.deck.pop()]
+    for p in self.players:
+        discard_card = self.players[p].hole.pop(random.randint(0, len(self.players[p].hole) - 1))
+        self.deck.append(discard_card)
+        shuffle(self.deck)

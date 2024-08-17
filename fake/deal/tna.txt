@@ -1,0 +1,7 @@
+dealx: Deal x cards to each player. After each player receives a card, move the top card of the deck to the bottom before dealing the next card.
+<SEP>
+def dealx(self, x):
+    for i in range(x):
+        for p in self.players:
+            self.players[p].hole += [self.deck.pop()]
+            self.deck = [self.deck.pop()] + self.deck

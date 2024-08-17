@@ -1,0 +1,9 @@
+flopx: Discard one card from the deck. Flip a coin for each of the x cards to flop. If heads, burn the card instead of flopping it. If tails, add it to the community.
+<SEP>
+def flopx(self, x):
+    self.deck.pop()
+    for i in range(x):
+        if random.choice(['H', 'T']) == 'T':
+            self.community += [self.deck.pop()]
+        else:
+            self.deck.pop()

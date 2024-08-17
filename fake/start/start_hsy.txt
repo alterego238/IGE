@@ -1,0 +1,14 @@
+There are five suits: Hearts (H), Diamonds (D), Clubs (C), Spades (S), Suns (U).
+Card values rank as: 2<3<4<5<6<7<8<9<10<11<12<13<1<Infinity (I).
+There is one Infinity card, which is the highest-valued card.
+<SEP>
+
+def creat_deck(suits,values):
+    deck=[]
+    for v in values:
+        for s in suits:
+            deck+=[''.join([s,v])]
+    deck+=['I']
+    return deck
+state={}
+state['deck']=creat_deck(['H','D','C','S','U'],['2','3','4','5','6','7','8','9','10','11','12','13','1'])

@@ -1,0 +1,8 @@
+dealx: Each player draws x cards from the top of the deck. Every time a player draws 2 cards, shuffle the deck.
+<SEP>
+def dealx(self, x):
+    for p in self.players:
+        for i in range(x):
+            if i != 0 and i % 2 == 0:
+                shuffle(self.deck)
+            self.players[p].hole += [self.deck.pop()]

@@ -1,0 +1,9 @@
+flopx: Shuffle the deck. Flop x cards from the deck to the community. If each flopped card is an Ace (1), flop one more card.
+<SEP>
+def flopx(self, x):
+    shuffle(self.deck)
+    for i in range(x):
+        card = self.deck.pop()
+        self.community += [card]
+        if card[1:] == '1':
+            self.community += [self.deck.pop()]

@@ -1,0 +1,11 @@
+flopx: Discard the top card from the deck. Flop x cards from the deck to the community. If any of these cards is a face card (Jack is represented as 11, Queen is represented as 12, King is represented as 13), discard that card and flop another card. Repeat this process until x non-face cards are flopped.
+<SEP>
+def flopx(self, x):
+    self.deck.pop()
+    count = 0
+    while count < x:
+        card = self.deck.pop()
+        if card[0] in ['11','12','13']:
+            continue
+        self.community += [card]
+        count += 1

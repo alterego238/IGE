@@ -1,0 +1,6 @@
+dealx: Each player draws x cards from the top of the deck on their turn.
+<SEP>
+def dealx(self, x):
+    for p in self.players:
+        for i in range(x):
+            self.players[p].hole += [self.deck.pop()]

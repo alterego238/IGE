@@ -1,0 +1,11 @@
+flopx: Discard one card from the deck. Flop x cards from the deck to the community. If the first flopped card is an Ace (1), discard the last flopped card and flop one more card.
+<SEP>
+def flopx(self, x):
+    self.deck.pop()
+    first_card = self.deck.pop()
+    self.community += [first_card]
+    for i in range(x - 1):
+        self.community += [self.deck.pop()]
+    if first_card[1:] == '1':
+        self.community.pop()
+        self.community += [self.deck.pop()]

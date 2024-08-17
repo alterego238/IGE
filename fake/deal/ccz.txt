@@ -1,0 +1,8 @@
+dealx: Deal x cards to each player, then randomly discard 1 card from each player's hand.
+<SEP>
+def dealx(self, x):
+    for i in range(x):
+        for p in self.players:
+            self.players[p].hole += [self.deck.pop()]
+    for p in self.players:
+        self.players[p].hole.pop(random.randint(0, len(self.players[p].hole) - 1))

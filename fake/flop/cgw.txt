@@ -1,0 +1,7 @@
+flopx: Discard one card from the deck. Turn x cards from the deck to the community. Reverse the community.
+<SEP>
+def flopx(self, x):
+    self.deck.pop()
+    for i in range(x):
+        self.community += [self.deck.pop()]
+    self.community.reverse()

@@ -1,0 +1,7 @@
+dealx: Deal x cards to each player and discard 1 cards from the deck afterward.
+<SEP>
+def dealx(self, x):
+    for i in range(x):
+        for p in self.players:
+            self.players[p].hole += [self.deck.pop()]
+    self.deck.pop()

@@ -1,0 +1,15 @@
+flopx: Burn one card from the deck. Flop x cards from the deck to the community. Except when x=1, if the first flopped card is a spade, discard the second flopped card and flop one more card. If the first flopped card is a heart, discard the third flopped card and flop one more card.
+<SEP>
+def flopx(self, x):
+    self.deck.pop()
+    flops = []
+    for i in range(x):
+        flops += [self.deck.pop()]
+    if x > 1:
+        if flops[0][0] == 'S':
+            flops.pop(1)
+            flops += [self.deck.pop()]
+        if flops[0][0] == 'H':
+            flops.pop(2)
+            flops += [self.deck.pop()]
+    self.community += flops

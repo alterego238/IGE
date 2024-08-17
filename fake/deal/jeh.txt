@@ -1,0 +1,6 @@
+dealx: Deal cards to each player until their number of cards exceeds x.
+<SEP>
+def dealx(self, x):
+    for p in self.players:
+        while len(self.players[p].hole) < x:
+            self.players[p].hole += [self.deck.pop()]

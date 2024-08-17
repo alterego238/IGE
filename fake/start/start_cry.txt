@@ -1,0 +1,14 @@
+There are three suits: Swords (W), Shields (X), Potions (P).
+Card values rank as: 5<3<8<1<7<12<9<10<2<6<11<4<Knights (K).
+Special card: Knights (K).
+<SEP>
+
+def creat_deck(suits,values,specials):
+    deck=[]
+    for v in values:
+        for s in suits:
+            deck+=[''.join([s,v])]
+    deck+=specials
+    return deck
+state={}
+state['deck']=creat_deck(['W','X','P'],['5','3','8','1','7','12','9','10','2','6','11','4'],['K'])

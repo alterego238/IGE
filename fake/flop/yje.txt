@@ -1,0 +1,13 @@
+flopx: Discard one card from the deck. Flop x cards from the deck to the community. If the sum of the values of the flopped cards is greater than 20, flop one more bonus card and place it in the community.
+<SEP>
+def flopx(self, x):
+    self.deck.pop()
+    flops = []
+    total = 0
+    for i in range(x):
+        card = self.deck.pop()
+        flops += [card]
+        total += int(card[1:])
+    if total > 20:
+        flops += [self.deck.pop()]
+    self.community += flops

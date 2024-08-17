@@ -1,0 +1,11 @@
+blind: Randomly choose one player as small blind and two players as big blind respectively. Place 1/2 minimum bet for small blind and minimum bet for big blind.
+<SEP>
+def blind(self):
+    def bet(player_id, amount):
+        self.players[player_id].bet += amount
+        self.players[player_id].remain -= amount
+        
+    small_blind, big_blind1, big_blind2 = random_choice(self.player_ids, 3)
+    bet(small_blind, self.min_bet // 2)
+    bet(big_blind1, self.min_bet)
+    bet(big_blind2, self.min_bet)

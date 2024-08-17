@@ -1,0 +1,7 @@
+flopx: Burn one card from the deck. Flop x cards to the community. After each one flop, burn one more card.
+<SEP>
+def flopx(self, x):
+    self.deck.pop()
+    for i in range(x):
+        self.community += [self.deck.pop()]
+        self.deck.pop()

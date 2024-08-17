@@ -1,0 +1,13 @@
+There are four suits: Hearts (H), Diamonds (D), Clubs (C), Spades (S).
+Card values rank as: 2<3<4<5<6<7<8<9<10<E<J<Q<K<A.
+<SEP>
+
+def creat_deck(suits,values):
+    deck=[]
+    for v in values:
+        for s in suits:
+            deck+=[''.join([s,v])]
+    return deck
+state={}
+state['deck']=creat_deck(['H','D','C','S'],['2','3','4','5','6','7','8','9','10','E','J','Q','K','A'])
+

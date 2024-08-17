@@ -1,0 +1,14 @@
+There are five suits: Hearts (H), Diamonds (D), Clubs (C), Spades (S), Stars (T).
+Card values rank as: 1<2<3<4<5<6<7<8<9<10<11<12<13<Zodiac (Z1, Z2, Z3, Z4, Z5, Z6, Z7, Z8, Z9, Z10, Z11, Z12).
+There are twelve special Zodiac cards, which are the highest-valued cards.
+<SEP>
+
+def creat_deck(suits,values):
+    deck=[]
+    for v in values:
+        for s in suits:
+            deck+=[''.join([s,v])]
+    deck+=['Z'+str(i) for i in range(1,13)]
+    return deck
+state={}
+state['deck']=creat_deck(['H','D','C','S','T'],['1','2','3','4','5','6','7','8','9','10','11','12','13'])

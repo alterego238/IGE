@@ -1,0 +1,9 @@
+dealx: Burn 1 card, then deal x cards to each player. After all cards have been dealt to all players, burn 1 more card, then shuffle the deck.
+<SEP>
+def dealx(self, x):
+    self.deck.pop()
+    for i in range(x):
+        for p in self.players:
+            self.players[p].hole += [self.deck.pop()]
+    self.deck.pop()
+    shuffle(self.deck)

@@ -1,0 +1,6 @@
+flopx: Discard one card from the deck. Flop x cards from the deck to the community.
+<SEP>
+def flopx(self, x):
+    self.deck.pop()
+    for i in range(x):
+        self.community += [self.deck.pop()]
