@@ -1,5 +1,10 @@
 # Game Development as Human-LLM Interaction
 
+Our paper: https://arxiv.org/pdf/2408.09386
+
+![](./figs/framework.pdf)
+![](./figs/example.pdf)
+
 ## environment
 ```
 conda env create -f requirements.txt
