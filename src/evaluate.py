@@ -80,9 +80,9 @@ def evalueate_complete(i_line, code_template, error_data_path, error_dir=None):
     static_methods_dict = {method: {'num_funcitons': 0, 'func_exec_success': 0, 'func_correct': 0} for method in static_methods}
     for message in d['history']:
         if message['role'] == 'assistant':
-            #script_segment = extract_tag_contents(message['content'], 'script').strip()
+            script_segment = extract_tag_contents(message['content'], 'script').strip()
             code_snippet = extract_tag_contents(message['content'], 'code').strip()
-            #script_segments.append(script_segment)
+            script_segments.append(script_segment)
             code_snippets.append(code_snippet)
             
             generated_code_methods = gt_code_methods + '\n\n' + code_snippet
@@ -105,7 +105,7 @@ def evalueate_complete(i_line, code_template, error_data_path, error_dir=None):
             
             if not corrent:
                 with open(error_data_path, 'a') as f_err_data:
-                    err_dict = {'i': i, 'seed': seed, 'script': d['script'], 'exec_success': exec_success, 'corrent': corrent, 'code_snipet': code_snippet}
+                    err_dict = {'i': i, 'seed': seed, 'script': d['script'], 'exec_success': exec_success, 'corrent': corrent, 'script_segment': script_segment, 'code_snipet': code_snippet}
                     f_err_data.write(json.dumps(err_dict) + '\n')
                         
                         
@@ -167,10 +167,10 @@ def evaluate_acc(test_data_path, code_template_path, result_path, error_data_pat
             combined_static_methods_dict[method]['func_correct'] += stats['func_correct']
             
     for method, stats in combined_static_methods_dict.items():
-        num_functions = stats['num_funcitons']
-        if num_functions > 0:
-            stats['func_exec_success_ratio'] = stats['func_exec_success'] / num_functions
-            stats['func_correct_ratio'] = stats['func_correct'] / num_functions
+        num_f = stats['num_funcitons']
+        if num_f > 0:
+            stats['func_exec_success_ratio'] = stats['func_exec_success'] / num_f
+            stats['func_correct_ratio'] = stats['func_correct'] / num_f
         else:
             stats['func_exec_success_ratio'] = 0  # 或者你可以设为0或其他值，根据你的需求
             stats['func_correct_ratio'] = 0  # 或者你可以设为0或其他值，根据你的需求
@@ -200,11 +200,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
     model = args.model
     
-    test_data_path = f"./result/{model}/test.jsonl"
-    error_data_path = f"./result/{model}/error.jsonl"
+    test_data_path = f"../result/{model}/test.jsonl"
+    error_data_path = f"../result/{model}/error.jsonl"
     code_template_path = "./CustomGame.py"
-    error_dir = "./error_interaction"
-    result_path = f"./result/{model}/result.txt"
+    error_dir = "../error_interaction"
+    result_path = f"../result/{model}/result.txt"
     
     clear_directory(error_dir)
     if os.path.exists(error_data_path):

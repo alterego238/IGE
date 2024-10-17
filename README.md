@@ -1,7 +1,5 @@
 # Game Development as Human-LLM Interaction
 
-Our paper: https://arxiv.org/pdf/2408.09386
-
 ## 🚀 Overview
 We introduce the Interaction-driven Game Engine (IGE) powered by LLM, which allows everyone to develop a custom game using natural language through Human-LLM interaction.
 
@@ -10,12 +8,14 @@ We introduce the Interaction-driven Game Engine (IGE) powered by LLM, which allo
 
 ## 🔧 Environment
 ```
-conda env create -f requirements.txt
+pip install -r requirements.txt
 ```
 The specific environment configuration can be found in the `requirements.txt` file. 
 Our experiments were conducted on a machine with 8×A800 GPUs.
 
 ## 📂 Data Generation
+
+first: `cd src`
 
 config openai_key: modify `utils.py` to config openai key
 ```bash
@@ -41,17 +41,4 @@ python evaluate_wo_script.py --model $model
 config the `gpus` in `evaluate.sh` and then:
 ```bash
 bash evaluate.sh
-```
-
-## 📖 Citation
-```
-@misc{hong2024gamedevelopmenthumanllminteraction,
-      title={Game Development as Human-LLM Interaction}, 
-      author={Jiale Hong and Hongqiu Wu and Hai Zhao},
-      year={2024},
-      eprint={2408.09386},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2408.09386}, 
-}
 ```

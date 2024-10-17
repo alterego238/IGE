@@ -132,11 +132,11 @@ if __name__ == "__main__":
     evaluator_model = "gpt-4o"
     num_threads = 10
     
-    test_data_path = f"./result/{model}/test.jsonl"
-    result_path = f"./result/{model}/result.txt"
+    test_data_path = f"../result/{model}/test.jsonl"
+    result_path = f"../result/{model}/result.txt"
     
-    #evaluator_prompt_path = "./prompt/evaluator.md"
-    evaluator_prompt_dir = './prompt/evaluator.md'
+    #evaluator_prompt_path = "../prompt/evaluator.md"
+    evaluator_prompt_dir = '../prompt/evaluator.md'
     if os.path.isdir(evaluator_prompt_dir) or '7' in evaluator_prompt_dir:
         score_scale = 7
     else:

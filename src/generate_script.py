@@ -93,10 +93,10 @@ def generate_seed_data(script_template_path, code_template_path, code_run_path, 
             if not judge_code_exec(code_run_path, code):
                 continue
             
-            with open('script_example.yaml', 'w') as f_script, open('code_example.py', 'w') as f_code:
+            """with open('script_example.yaml', 'w') as f_script, open('code_example.py', 'w') as f_code:
                 f_script.write(script)
                 f_code.write(code)
-            exit(1)
+            exit(1)"""
                 
             data = {
                 'script': script,
@@ -115,14 +115,14 @@ if __name__ == '__main__':
     script_template_path = './script_template.yaml'
     code_template_path = './CustomGame_template.py'
     code_run_path = './CustomGame.py'
-    method_dir = './fake'
+    method_dir = '../fake'
     split = args.split
     
     tough = False
     
     if split == 'test':
         num_samples = 10
-        data_path = './data/test.jsonl'
+        data_path = '../data/test.jsonl'
         valid_dict = {
             'blind': ['lzs.txt', 'wkd.txt'], # 'gdk.txt'
             'deal': ['phr.txt', 'efl.txt', 'skz.txt', 'ajn.txt'], # 'tna.txt'
@@ -132,7 +132,7 @@ if __name__ == '__main__':
             valid_dict['blind'].append('gdk.txt')
     elif split == 'train':
         num_samples = 20
-        data_path = './data/complete_pool.jsonl'
+        data_path = '../data/complete_pool.jsonl'
         valid_dict = {
             'blind': ['standard.txt', 'tua.txt', 'kea.txt'],
             'deal': ['standard.txt', 'ccz.txt', 'eqk.txt', 'hde.txt', 'hkx.txt', 'jeh.txt', 'jqw.txt', 'ppp.txt', 'qzi.txt', 'bte.txt'],
@@ -140,7 +140,7 @@ if __name__ == '__main__':
         }
     elif split == 'train_complete':
         num_samples = 100
-        data_path = './data/complete_pool.jsonl'
+        data_path = '../data/complete_pool.jsonl'
         valid_dict = {
             'blind': ['standard.txt', 'tua.txt', 'kea.txt'],
             'deal': ['standard.txt', 'ccz.txt', 'eqk.txt', 'hde.txt', 'hkx.txt', 'jeh.txt', 'jqw.txt', 'ppp.txt', 'qzi.txt', 'bte.txt'],

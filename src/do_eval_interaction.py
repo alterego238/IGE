@@ -152,33 +152,33 @@ if __name__ == '__main__':
     model = args.model
     api = args.api
     
-    user_system_prompt_path = './prompt/interactor.md'
-    assistant_system_prompt_path = './prompt/gpt_system_prompt.md' if api else './prompt/system_prompt.md'
+    user_system_prompt_path = '../prompt/interactor.md'
+    assistant_system_prompt_path = '../prompt/gpt_system_prompt.md' if api else '../prompt/system_prompt.md'
     user_model = 'gpt-4o-mini'
     num_threads = args.num_threads
     chunk_size = None
     
     use_lora = True
-    cache_dir = '../../cache'
+    cache_dir = '../../../cache'
     load_model_path = 'meta-llama/Meta-Llama-3.1-8B-Instruct'
-    load_ckpt = f'./model/{model}'
-    result_dir = f'./result/{model}'
-    result_path = f'./result/{model}/test.jsonl'
+    load_ckpt = f'../model/{model}'
+    result_dir = f'../result/{model}_tt'
+    result_path = f'../result/{model}_tt/test.jsonl'
     
     if args.no_ft:
         use_lora = False
         load_ckpt = load_model_path
-        assistant_system_prompt_path = './prompt/gpt_system_prompt.md'
+        assistant_system_prompt_path = '../prompt/gpt_system_prompt.md'
         
     if args.wo_script:
-        assistant_system_prompt_path = './prompt/system_prompt_wo_script.md'
-        user_system_prompt_path = './prompt/interactor_wo_script.md'
+        assistant_system_prompt_path = '../prompt/system_prompt_wo_script.md'
+        user_system_prompt_path = '../prompt/interactor_wo_script.md'
         
     if args.wo_instruct:
         load_model_path = 'meta-llama/Meta-Llama-3.1-8B'
         use_lora = False
         load_ckpt = load_model_path
-        assistant_system_prompt_path = './prompt/gpt_system_prompt.md'
+        assistant_system_prompt_path = '../prompt/gpt_system_prompt.md'
         
     if args.wo_stage0:
         load_model_path = 'meta-llama/Meta-Llama-3.1-8B'
@@ -189,7 +189,7 @@ if __name__ == '__main__':
         model, tokenizer = init_model(load_model_path, cache_dir, load_ckpt, use_lora)
     
     data = []
-    data_path = './data/test.jsonl'
+    data_path = '../data/test.jsonl'
     with open(data_path, 'r') as f:
         for line in f:
             d = json.loads(line)

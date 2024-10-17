@@ -268,15 +268,15 @@ if __name__ == '__main__':
     num_threads = 10
     chunk_size = None
 
-    prompt_path = f'./prompt/{stage}.md'
-    data_path = './data/data.jsonl'
-    data_generated_history_path = './data/data_generated_history.jsonl'
+    prompt_path = f'../prompt/{stage}.md'
+    data_path = '../data/data.jsonl'
+    data_generated_history_path = '../data/data_generated_history.jsonl'
     
-    script_code_pool_path = './data/script_code_pool.jsonl'
-    train_path = './data/train.jsonl'
-    complete_pool_path = './data/complete_pool.jsonl'
-    train_complete_path = './data/train_complete.jsonl'
-    mixed_path = './data/mixed.jsonl'
+    script_code_pool_path = '../data/script_code_pool.jsonl'
+    train_path = '../data/train.jsonl'
+    complete_pool_path = '../data/complete_pool.jsonl'
+    train_complete_path = '../data/train_complete.jsonl'
+    mixed_path = '../data/mixed.jsonl'
     
     customgame_methods_path = './CustomGame_methods.py'
     code_template_path = './CustomGame.py'

@@ -88,9 +88,9 @@ if __name__ == '__main__':
     parser.add_argument("--stage", type=str, choices=['add_pool', 'seed_data'], help="generate stage")
     args = parser.parse_args()
     
-    script_path = './data/complete_pool.jsonl'
-    script_code_pool_path = './data/script_code_pool.jsonl'
-    data_path = './data/data.jsonl'
+    script_path = '../data/complete_pool.jsonl'
+    script_code_pool_path = '../data/script_code_pool.jsonl'
+    data_path = '../data/data.jsonl'
     sample_rate = 0.8
     inject_rate = 0.5
     
