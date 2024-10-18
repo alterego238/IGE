@@ -1,4 +1,5 @@
 # Game Development as Human-LLM Interaction
+Our paper: https://arxiv.org/pdf/2408.09386
 
 ## 🚀 Overview
 We introduce the Interaction-driven Game Engine (IGE) powered by LLM, which allows everyone to develop a custom game using natural language through Human-LLM interaction.
